@@ -6,3 +6,11 @@ C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DS
 C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.csproj.GenerateResource.Cache
 C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.exe
 C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.pdb
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.exe
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.pdb
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\bin\Debug\DST_Server_GUI.exe
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\bin\Debug\DST_Server_GUI.pdb
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.csprojResolveAssemblyReference.cache
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.Form1.resources
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.Properties.Resources.resources
+C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.csproj.GenerateResource.Cache
