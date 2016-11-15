@@ -79,5 +79,10 @@ namespace DST_Server_GUI
         {
             mStreamWriter.WriteLine(textBox_Send.Text.ToString());
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
