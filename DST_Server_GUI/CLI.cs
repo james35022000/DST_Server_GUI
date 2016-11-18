@@ -27,7 +27,8 @@ namespace DST_Server_GUI
 
         private void CLI_Load(object sender, EventArgs e)
         {
-
+            Server_output.Text = form1.output.ToString();
+            textBox_Send.KeyDown += OnKeyDownHandler;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,10 +36,25 @@ namespace DST_Server_GUI
             form1.mStreamWriter.WriteLine(textBox_Send.Text.ToString());
         }
 
-        public void Server_output_update()
+        public TextBox Svr_output
         {
-            if (Server_output.InvokeRequired) { 
-                Server_output.BeginInvoke(new DataReceivedEventHandler(form1.SortOutputHandler), new[] { sendingProcess, outLine }); 
+            get { return Server_output; }
+            set { Server_output.Text = "";
+                Server_output.Text }
+        }
+
+        private void button_Send_Click(object sender, EventArgs e)
+        {
+            form1.mStreamWriter.WriteLine(textBox_Send.Text.ToString());
+            textBox_Send.Text = "";
+        }
+        
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                form1.mStreamWriter.WriteLine(textBox_Send.Text.ToString());
+                textBox_Send.Text = "";
             }
         }
     }

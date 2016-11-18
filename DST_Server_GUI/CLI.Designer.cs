@@ -36,14 +36,17 @@
             // 
             // Server_output
             // 
+            this.Server_output.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Server_output.Font = new System.Drawing.Font("文泉驛等寬微米黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Server_output.Location = new System.Drawing.Point(29, 43);
             this.Server_output.Multiline = true;
             this.Server_output.Name = "Server_output";
             this.Server_output.ReadOnly = true;
+            this.Server_output.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Server_output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Server_output.Size = new System.Drawing.Size(418, 235);
             this.Server_output.TabIndex = 3;
-            this.Server_output.TextChanged += new System.EventHandler(this.Server_output_TextChanged);
+            this.Server_output.WordWrap = false;
             // 
             // textBox_Send
             // 
@@ -60,6 +63,7 @@
             this.button_Send.TabIndex = 5;
             this.button_Send.Text = "Send";
             this.button_Send.UseVisualStyleBackColor = true;
+            this.button_Send.Click += new System.EventHandler(this.button_Send_Click);
             // 
             // button_CLIMode
             // 

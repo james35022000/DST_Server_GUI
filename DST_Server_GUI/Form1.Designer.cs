@@ -50,7 +50,6 @@
             this.comboBox_server.Name = "comboBox_server";
             this.comboBox_server.Size = new System.Drawing.Size(121, 22);
             this.comboBox_server.TabIndex = 1;
-            this.comboBox_server.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button_CLI
             // 

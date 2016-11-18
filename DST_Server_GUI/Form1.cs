@@ -55,23 +55,37 @@ namespace DST_Server_GUI
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         public void SortOutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
         {
-            if (Server_output.InvokeRequired) { Server_output.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler), new[] { sendingProcess, outLine }); }
-            else {
-                if (!String.IsNullOrEmpty(outLine.Data))  {
-                    while (line_cnt >= 30) {
+            if (cli != null)
+            {
+                if (cli.Svr_output.InvokeRequired) { cli.Svr_output.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler), new[] { sendingProcess, outLine }); }
+                else
+                {
+                    if (!String.IsNullOrEmpty(outLine.Data))
+                    {
+                        while (line_cnt >= 30)
+                        {
+                            output.Remove(0, output.ToString().IndexOf("\n") + 1);
+                            line_cnt--;
+                        }
+                        output.Append(outLine.Data + Environment.NewLine);
+                        line_cnt++;
+                        cli.Svr_output.Text = output.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(outLine.Data))
+                {
+                    while (line_cnt >= 30)
+                    {
                         output.Remove(0, output.ToString().IndexOf("\n") + 1);
                         line_cnt--;
                     }
                     output.Append(outLine.Data + Environment.NewLine);
                     line_cnt++;
-                    Server_output.Text = output.ToString();
                 }
             }
         }
@@ -79,7 +93,7 @@ namespace DST_Server_GUI
 
         private void button_CLI_Click(object sender, EventArgs e)
         {
-            cli = new CLI();
+            cli = new CLI(this);
             cli.FormClosed += CLI_Form_Closed;
             cli.Show();
         }
