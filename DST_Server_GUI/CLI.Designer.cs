@@ -43,6 +43,7 @@
             this.Server_output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Server_output.Size = new System.Drawing.Size(418, 235);
             this.Server_output.TabIndex = 3;
+            this.Server_output.TextChanged += new System.EventHandler(this.Server_output_TextChanged);
             // 
             // textBox_Send
             // 
@@ -80,6 +81,7 @@
             this.Controls.Add(this.Server_output);
             this.Name = "CLI";
             this.Text = "CLI";
+            this.Load += new System.EventHandler(this.CLI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

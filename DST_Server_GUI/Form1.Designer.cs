@@ -60,7 +60,7 @@
             this.button_CLI.TabIndex = 5;
             this.button_CLI.Text = "CLI";
             this.button_CLI.UseVisualStyleBackColor = true;
-            this.button_CLI.Click += new System.EventHandler(this.button2_Click_1);
+            this.button_CLI.Click += new System.EventHandler(this.button_CLI_Click);
             // 
             // Form1
             // 

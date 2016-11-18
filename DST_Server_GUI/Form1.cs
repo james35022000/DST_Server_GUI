@@ -13,8 +13,9 @@ namespace DST_Server_GUI
 {
     public partial class Form1 : Form
     {
-        private StreamWriter mStreamWriter;
-        private StringBuilder output = new StringBuilder("");
+        public StreamWriter mStreamWriter;
+        public StringBuilder output = new StringBuilder("");
+        private CLI cli = null;
         Process Server_Master;
         int line_cnt = 0;
 
@@ -59,7 +60,7 @@ namespace DST_Server_GUI
             
         }
 
-        private void SortOutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
+        public void SortOutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
         {
             if (Server_output.InvokeRequired) { Server_output.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler), new[] { sendingProcess, outLine }); }
             else {
@@ -75,14 +76,17 @@ namespace DST_Server_GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button_CLI_Click(object sender, EventArgs e)
         {
-            mStreamWriter.WriteLine(textBox_Send.Text.ToString());
+            cli = new CLI();
+            cli.FormClosed += CLI_Form_Closed;
+            cli.Show();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void CLI_Form_Closed(object sender, FormClosedEventArgs e)
         {
-            
+            cli = null;
         }
     }
 }
