@@ -38,26 +38,27 @@
             // 
             this.Server_output.Cursor = System.Windows.Forms.Cursors.Default;
             this.Server_output.Font = new System.Drawing.Font("文泉驛等寬微米黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Server_output.Location = new System.Drawing.Point(29, 43);
+            this.Server_output.Location = new System.Drawing.Point(12, 43);
             this.Server_output.Multiline = true;
             this.Server_output.Name = "Server_output";
             this.Server_output.ReadOnly = true;
             this.Server_output.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Server_output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Server_output.Size = new System.Drawing.Size(418, 235);
+            this.Server_output.Size = new System.Drawing.Size(459, 238);
             this.Server_output.TabIndex = 3;
             this.Server_output.WordWrap = false;
+            this.Server_output.TextChanged += new System.EventHandler(this.Server_output_TextChanged);
             // 
             // textBox_Send
             // 
-            this.textBox_Send.Location = new System.Drawing.Point(29, 306);
+            this.textBox_Send.Location = new System.Drawing.Point(12, 306);
             this.textBox_Send.Name = "textBox_Send";
-            this.textBox_Send.Size = new System.Drawing.Size(343, 22);
+            this.textBox_Send.Size = new System.Drawing.Size(378, 22);
             this.textBox_Send.TabIndex = 4;
             // 
             // button_Send
             // 
-            this.button_Send.Location = new System.Drawing.Point(387, 304);
+            this.button_Send.Location = new System.Drawing.Point(396, 304);
             this.button_Send.Name = "button_Send";
             this.button_Send.Size = new System.Drawing.Size(75, 23);
             this.button_Send.TabIndex = 5;
@@ -73,6 +74,7 @@
             this.button_CLIMode.TabIndex = 6;
             this.button_CLIMode.Text = "Master";
             this.button_CLIMode.UseVisualStyleBackColor = true;
+            this.button_CLIMode.Click += new System.EventHandler(this.button_CLIMode_Click);
             // 
             // CLI
             // 
@@ -83,6 +85,7 @@
             this.Controls.Add(this.button_Send);
             this.Controls.Add(this.textBox_Send);
             this.Controls.Add(this.Server_output);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CLI";
             this.Text = "CLI";
             this.Load += new System.EventHandler(this.CLI_Load);
