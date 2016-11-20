@@ -28,7 +28,13 @@ namespace DST_Server_GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox_server.Items.AddRange(new Object[] { "DST_Server1", "DST_Server2" });
+            string AppPath = Application.StartupPath + "\\data";
+            try { string[] data = System.IO.File.ReadAllLines(AppPath); }
+            catch (FileNotFoundException ex)
+            {
+                File.Create(AppPath);
+            }
+            //comboBox_server.Items.AddRange(new Object[] { "DST_Server1", "DST_Server2" });
         }
 
         private void button1_Click(object sender, EventArgs e)

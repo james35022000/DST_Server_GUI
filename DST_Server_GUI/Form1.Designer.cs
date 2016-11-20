@@ -39,9 +39,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLabel_Status = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dedicateServerPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             // comboBox_server
             // 
             this.comboBox_server.FormattingEnabled = true;
-            this.comboBox_server.Location = new System.Drawing.Point(323, 174);
+            this.comboBox_server.Location = new System.Drawing.Point(323, 168);
             this.comboBox_server.Name = "comboBox_server";
             this.comboBox_server.Size = new System.Drawing.Size(121, 22);
             this.comboBox_server.TabIndex = 1;
@@ -152,6 +152,12 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -165,12 +171,6 @@
             this.dedicateServerPathToolStripMenuItem.Name = "dedicateServerPathToolStripMenuItem";
             this.dedicateServerPathToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
             this.dedicateServerPathToolStripMenuItem.Text = "Dedicate Server Path";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
-            this.fileToolStripMenuItem.Text = "File";
             // 
             // Form1
             // 
