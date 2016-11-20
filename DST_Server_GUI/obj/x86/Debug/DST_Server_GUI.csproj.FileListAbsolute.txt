@@ -17,3 +17,4 @@ C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DS
 C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.CLI.resources
 C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.CLI.resources
 C:\Users\Jack-PC\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.Setting.resources
+C:\Users\Jack-NB\Documents\GitHub\DST_Server_GUI\DST_Server_GUI\obj\x86\Debug\DST_Server_GUI.Setting.resources

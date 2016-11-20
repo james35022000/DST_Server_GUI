@@ -27,14 +27,21 @@ namespace DST_Server_GUI
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        { 
             string AppPath = Application.StartupPath + "\\data";
-            try { string[] data = System.IO.File.ReadAllLines(AppPath); }
+            try 
+            {
+                string[] data = System.IO.File.ReadAllLines(AppPath);
+                if(data[0] != null) {
+                    int num = Convert.ToInt32(data[0].Split(',')[1]);
+                    for (int i = 1; i <= num; i++)
+                        comboBox_server.Items.Add(data[i]);
+                }
+            }
             catch (FileNotFoundException ex)
             {
                 File.Create(AppPath);
             }
-            //comboBox_server.Items.AddRange(new Object[] { "DST_Server1", "DST_Server2" });
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -189,6 +196,21 @@ namespace DST_Server_GUI
             setting = null;
         }
 
+        private void textBox_ServerPath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
+         MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                // Cancel the Closing event from closing the form.
+                e.Cancel = true;
+                // Call method to save file...
+            }
+        }
 
     }
 }
