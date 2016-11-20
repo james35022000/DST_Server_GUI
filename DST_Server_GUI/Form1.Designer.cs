@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Start = new System.Windows.Forms.Button();
             this.comboBox_server = new System.Windows.Forms.ComboBox();
             this.button_CLI = new System.Windows.Forms.Button();
             this.button_About = new System.Windows.Forms.Button();
@@ -46,16 +46,17 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // button_Start
             // 
-            this.button1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(344, 482);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Start.Enabled = false;
+            this.button_Start.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Start.Location = new System.Drawing.Point(344, 482);
+            this.button_Start.Name = "button_Start";
+            this.button_Start.Size = new System.Drawing.Size(131, 62);
+            this.button_Start.TabIndex = 0;
+            this.button_Start.Text = "Start";
+            this.button_Start.UseVisualStyleBackColor = true;
+            this.button_Start.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox_server
             // 
@@ -65,9 +66,11 @@
             this.comboBox_server.Name = "comboBox_server";
             this.comboBox_server.Size = new System.Drawing.Size(121, 22);
             this.comboBox_server.TabIndex = 1;
+            this.comboBox_server.SelectedIndexChanged += new System.EventHandler(this.comboBox_server_SelectedIndexChanged);
             // 
             // button_CLI
             // 
+            this.button_CLI.Enabled = false;
             this.button_CLI.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CLI.Location = new System.Drawing.Point(34, 168);
             this.button_CLI.Name = "button_CLI";
@@ -92,7 +95,6 @@
             this.textBox_ServerPath.Name = "textBox_ServerPath";
             this.textBox_ServerPath.Size = new System.Drawing.Size(329, 22);
             this.textBox_ServerPath.TabIndex = 7;
-            this.textBox_ServerPath.TextChanged += new System.EventHandler(this.textBox_ServerPath_TextChanged);
             // 
             // label1
             // 
@@ -130,9 +132,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel_Status});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 567);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 564);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(490, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(490, 25);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -140,7 +142,7 @@
             // 
             this.statusLabel_Status.ForeColor = System.Drawing.Color.Red;
             this.statusLabel_Status.Name = "statusLabel_Status";
-            this.statusLabel_Status.Size = new System.Drawing.Size(34, 17);
+            this.statusLabel_Status.Size = new System.Drawing.Size(44, 20);
             this.statusLabel_Status.Text = "Stop";
             // 
             // menuStrip1
@@ -150,14 +152,14 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(490, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(490, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // toolStripMenuItem1
@@ -165,13 +167,13 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dedicateServerPathToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(75, 24);
             this.toolStripMenuItem1.Text = "Setting";
             // 
             // dedicateServerPathToolStripMenuItem
             // 
             this.dedicateServerPathToolStripMenuItem.Name = "dedicateServerPathToolStripMenuItem";
-            this.dedicateServerPathToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.dedicateServerPathToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
             this.dedicateServerPathToolStripMenuItem.Text = "Dedicate Server Path";
             // 
             // Form1
@@ -188,7 +190,7 @@
             this.Controls.Add(this.button_About);
             this.Controls.Add(this.button_CLI);
             this.Controls.Add(this.comboBox_server);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_Start);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -206,7 +208,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.ComboBox comboBox_server;
         private System.Windows.Forms.Button button_CLI;
         private System.Windows.Forms.Button button_About;

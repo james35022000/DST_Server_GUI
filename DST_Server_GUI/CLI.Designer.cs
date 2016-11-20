@@ -86,7 +86,10 @@
             this.Controls.Add(this.textBox_Send);
             this.Controls.Add(this.Server_output);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CLI";
+            this.ShowInTaskbar = false;
             this.Text = "CLI";
             this.Load += new System.EventHandler(this.CLI_Load);
             this.ResumeLayout(false);

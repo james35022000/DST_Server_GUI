@@ -27,21 +27,34 @@ namespace DST_Server_GUI
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        { 
+        {
+            this.FormClosing += new FormClosingEventHandler(Form1_Closing);
             string AppPath = Application.StartupPath + "\\data";
-            try 
+            try
             {
-                string[] data = System.IO.File.ReadAllLines(AppPath);
-                if(data[0] != null) {
-                    int num = Convert.ToInt32(data[0].Split(',')[1]);
-                    for (int i = 1; i <= num; i++)
-                        comboBox_server.Items.Add(data[i]);
+                string[] data = File.ReadAllLines(AppPath);
+                if (data.Length != 0)
+                {
+                    textBox_ServerPath.Text = data[0];
+                    if (File.Exists(@data[0] + "\\serverInfo"))
+                    {
+                        string[] ServerInfo = File.ReadAllLines(@data[0] + "\\serverInfo");
+                        if (ServerInfo.Length != 0)
+                        {
+                            int num = Convert.ToInt32(ServerInfo[0].Split(',')[1]);
+                            for (int i = 1; i <= num; i++)
+                                comboBox_server.Items.Add(ServerInfo[i]);
+                        }
+                        else
+                        {
+                            StreamWriter file = new StreamWriter(@data[0] + "\\serverInfo");
+                            file.WriteLine("Server_num,0");
+                            file.Close();
+                        }
+                    }
                 }
             }
-            catch (FileNotFoundException ex)
-            {
-                File.Create(AppPath);
-            }
+            catch (FileNotFoundException ex) { File.Create(AppPath); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -168,9 +181,12 @@ namespace DST_Server_GUI
 
         private void button_CLI_Click(object sender, EventArgs e)
         {
-            cli = new CLI(this);
-            cli.FormClosed += CLI_Form_Closed;
-            cli.Show();
+            if (cli == null)
+            {
+                cli = new CLI(this);
+                cli.FormClosed += CLI_Form_Closed;
+                cli.Show();
+            }
         }
 
         private void button_Path_Click(object sender, EventArgs e)
@@ -181,9 +197,12 @@ namespace DST_Server_GUI
 
         private void button_Setting_Click(object sender, EventArgs e)
         {
-            setting = new Setting(this);
-            setting.FormClosed += Setting_Form_Closed;
-            setting.Show();
+            if (setting == null)
+            {
+                setting = new Setting(this);
+                setting.FormClosed += Setting_Form_Closed;
+                setting.Show();
+            }
         }
 
         private void CLI_Form_Closed(object sender, FormClosedEventArgs e)
@@ -196,20 +215,33 @@ namespace DST_Server_GUI
             setting = null;
         }
 
-        private void textBox_ServerPath_TextChanged(object sender, EventArgs e)
+        private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
-
+            DialogResult key = MessageBox.Show("Are you sure to shutdown the server", "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (key == DialogResult.Yes)
+            {
+                string AppPath = Application.StartupPath + "\\data";
+                StreamWriter file = new StreamWriter(AppPath);
+                file.WriteLine(textBox_ServerPath.Text.ToString());
+                file.Close();
+            }
+            e.Cancel = (key == DialogResult.No);
         }
 
-        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void comboBox_server_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
-         MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                // Cancel the Closing event from closing the form.
-                e.Cancel = true;
-                // Call method to save file...
-            }
+            if (comboBox_server.SelectedIndex != -1)
+                if (SettingAvailable())
+                {
+                    button_Start.Enabled = true;
+                    button_CLI.Enabled = true;
+                }
+        }
+
+        private bool SettingAvailable()
+        {
+            return true;
         }
 
     }
