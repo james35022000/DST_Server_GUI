@@ -25,7 +25,7 @@ namespace DST_Server_GUI
 
         private void Setting_Load(object sender, EventArgs e)
         {
-
+            this.Text += "---New Server";
         }
 
     }
