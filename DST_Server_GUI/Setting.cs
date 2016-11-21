@@ -28,5 +28,11 @@ namespace DST_Server_GUI
             this.Text += "---New Server";
         }
 
+        private void button_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

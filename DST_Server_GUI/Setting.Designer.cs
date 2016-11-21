@@ -30,28 +30,28 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button_Save = new System.Windows.Forms.Button();
+            this.comboBox_PauseWhenEmpty = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Intention = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_GameMode = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_PVP = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_MaxPlayer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_ServerPwd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_CavesPort = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_MasterPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_ServerDscpt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ServerName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -70,28 +70,28 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.comboBox4);
+            this.tabPage1.Controls.Add(this.button_Save);
+            this.tabPage1.Controls.Add(this.comboBox_PauseWhenEmpty);
             this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.comboBox3);
+            this.tabPage1.Controls.Add(this.comboBox_Intention);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.comboBox_GameMode);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.comboBox_PVP);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.textBox_MaxPlayer);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.textBox_ServerPwd);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.textBox_CavesPort);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.textBox_MasterPort);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.textBox_ServerDscpt);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBox_ServerName);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -100,27 +100,28 @@
             this.tabPage1.Text = "Server";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_Save
             // 
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(336, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 37);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Save.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Save.Location = new System.Drawing.Point(336, 411);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(118, 37);
+            this.button_Save.TabIndex = 23;
+            this.button_Save.Text = "Save";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
-            // comboBox4
+            // comboBox_PauseWhenEmpty
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox_PauseWhenEmpty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_PauseWhenEmpty.FormattingEnabled = true;
+            this.comboBox_PauseWhenEmpty.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.comboBox4.Location = new System.Drawing.Point(193, 303);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(64, 22);
-            this.comboBox4.TabIndex = 22;
+            this.comboBox_PauseWhenEmpty.Location = new System.Drawing.Point(193, 303);
+            this.comboBox_PauseWhenEmpty.Name = "comboBox_PauseWhenEmpty";
+            this.comboBox_PauseWhenEmpty.Size = new System.Drawing.Size(64, 22);
+            this.comboBox_PauseWhenEmpty.TabIndex = 22;
             // 
             // label11
             // 
@@ -131,19 +132,19 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Pause when empty";
             // 
-            // comboBox3
+            // comboBox_Intention
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBox_Intention.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Intention.FormattingEnabled = true;
+            this.comboBox_Intention.Items.AddRange(new object[] {
             "cooperative",
             "social",
             "competitive",
             "madness"});
-            this.comboBox3.Location = new System.Drawing.Point(193, 173);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 22);
-            this.comboBox3.TabIndex = 20;
+            this.comboBox_Intention.Location = new System.Drawing.Point(193, 173);
+            this.comboBox_Intention.Name = "comboBox_Intention";
+            this.comboBox_Intention.Size = new System.Drawing.Size(121, 22);
+            this.comboBox_Intention.TabIndex = 20;
             // 
             // label10
             // 
@@ -162,18 +163,18 @@
             this.label9.Size = new System.Drawing.Size(400, 2);
             this.label9.TabIndex = 18;
             // 
-            // comboBox2
+            // comboBox_GameMode
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox_GameMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_GameMode.FormattingEnabled = true;
+            this.comboBox_GameMode.Items.AddRange(new object[] {
             "endless",
             "survival",
             "wilderness"});
-            this.comboBox2.Location = new System.Drawing.Point(193, 273);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(85, 22);
-            this.comboBox2.TabIndex = 17;
+            this.comboBox_GameMode.Location = new System.Drawing.Point(193, 273);
+            this.comboBox_GameMode.Name = "comboBox_GameMode";
+            this.comboBox_GameMode.Size = new System.Drawing.Size(85, 22);
+            this.comboBox_GameMode.TabIndex = 17;
             // 
             // label8
             // 
@@ -184,17 +185,17 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Game Mode";
             // 
-            // comboBox1
+            // comboBox_PVP
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_PVP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_PVP.FormattingEnabled = true;
+            this.comboBox_PVP.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.comboBox1.Location = new System.Drawing.Point(193, 333);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(64, 22);
-            this.comboBox1.TabIndex = 15;
+            this.comboBox_PVP.Location = new System.Drawing.Point(193, 333);
+            this.comboBox_PVP.Name = "comboBox_PVP";
+            this.comboBox_PVP.Size = new System.Drawing.Size(64, 22);
+            this.comboBox_PVP.TabIndex = 15;
             // 
             // label7
             // 
@@ -205,15 +206,15 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "PVP";
             // 
-            // textBox6
+            // textBox_MaxPlayer
             // 
-            this.textBox6.Location = new System.Drawing.Point(193, 243);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox6.Size = new System.Drawing.Size(36, 22);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Text = "6";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MaxPlayer.Location = new System.Drawing.Point(193, 243);
+            this.textBox_MaxPlayer.Name = "textBox_MaxPlayer";
+            this.textBox_MaxPlayer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox_MaxPlayer.Size = new System.Drawing.Size(36, 22);
+            this.textBox_MaxPlayer.TabIndex = 13;
+            this.textBox_MaxPlayer.Text = "6";
+            this.textBox_MaxPlayer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -233,13 +234,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Server Passward";
             // 
-            // textBox5
+            // textBox_ServerPwd
             // 
-            this.textBox5.Location = new System.Drawing.Point(193, 53);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(235, 22);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ServerPwd.Location = new System.Drawing.Point(193, 53);
+            this.textBox_ServerPwd.Name = "textBox_ServerPwd";
+            this.textBox_ServerPwd.Size = new System.Drawing.Size(235, 22);
+            this.textBox_ServerPwd.TabIndex = 9;
+            this.textBox_ServerPwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -250,15 +251,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Caves Port";
             // 
-            // textBox4
+            // textBox_CavesPort
             // 
-            this.textBox4.Location = new System.Drawing.Point(193, 143);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "11001";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_CavesPort.Location = new System.Drawing.Point(193, 143);
+            this.textBox_CavesPort.Name = "textBox_CavesPort";
+            this.textBox_CavesPort.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox_CavesPort.Size = new System.Drawing.Size(100, 22);
+            this.textBox_CavesPort.TabIndex = 7;
+            this.textBox_CavesPort.Text = "11001";
+            this.textBox_CavesPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -269,15 +270,15 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Master Port";
             // 
-            // textBox3
+            // textBox_MasterPort
             // 
-            this.textBox3.Location = new System.Drawing.Point(193, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "10999";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MasterPort.Location = new System.Drawing.Point(193, 113);
+            this.textBox_MasterPort.Name = "textBox_MasterPort";
+            this.textBox_MasterPort.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox_MasterPort.Size = new System.Drawing.Size(100, 22);
+            this.textBox_MasterPort.TabIndex = 5;
+            this.textBox_MasterPort.Text = "10999";
+            this.textBox_MasterPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -288,13 +289,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Server Description";
             // 
-            // textBox2
+            // textBox_ServerDscpt
             // 
-            this.textBox2.Location = new System.Drawing.Point(193, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ServerDscpt.Location = new System.Drawing.Point(193, 83);
+            this.textBox_ServerDscpt.Name = "textBox_ServerDscpt";
+            this.textBox_ServerDscpt.Size = new System.Drawing.Size(235, 22);
+            this.textBox_ServerDscpt.TabIndex = 3;
+            this.textBox_ServerDscpt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -305,14 +306,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Server Name";
             // 
-            // textBox1
+            // textBox_ServerName
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(235, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ServerName.Location = new System.Drawing.Point(193, 23);
+            this.textBox_ServerName.Name = "textBox_ServerName";
+            this.textBox_ServerName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox_ServerName.Size = new System.Drawing.Size(235, 22);
+            this.textBox_ServerName.TabIndex = 1;
+            this.textBox_ServerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage2
             // 
@@ -350,27 +351,27 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ServerName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_ServerPwd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_CavesPort;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_MasterPort;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox_ServerDscpt;
+        private System.Windows.Forms.ComboBox comboBox_PVP;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_MaxPlayer;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox_Intention;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox_PauseWhenEmpty;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox_GameMode;
+        private System.Windows.Forms.Button button_Save;
 
     }
 }

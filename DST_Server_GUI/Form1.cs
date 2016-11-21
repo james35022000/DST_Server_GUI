@@ -35,9 +35,9 @@ namespace DST_Server_GUI
                 string[] data = File.ReadAllLines(AppPath);
                 if (data.Length != 0)
                 {
-                    textBox_ServerPath.Text = data[0];
                     if (File.Exists(@data[0] + "\\serverInfo"))
                     {
+                        textBox_ServerPath.Text = data[0];
                         string[] ServerInfo = File.ReadAllLines(@data[0] + "\\serverInfo");
                         if (ServerInfo.Length != 0)
                         {
