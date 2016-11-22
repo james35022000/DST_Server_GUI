@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace DST_Server_GUI
 {
@@ -25,7 +27,17 @@ namespace DST_Server_GUI
 
         private void Setting_Load(object sender, EventArgs e)
         {
-            this.Text += "---New Server";
+            if (form1.ServerForSetting != "")
+            {
+                this.Text += "---" + form1.ServerForSetting;
+                textBox_ServerName.Text = form1.ServerForSetting;
+                textBox_ServerName.ReadOnly = true;
+                LoadSetting();
+            }
+            else
+            {
+                this.Text += "---New Server";
+            }
         }
 
         private void button_Save_Click(object sender, EventArgs e)
@@ -33,6 +45,28 @@ namespace DST_Server_GUI
 
         }
 
-        
+        private void label_ServerName_Click(object sender, EventArgs e)
+        {
+            textBox_ServerName.ReadOnly = false;
+        }
+
+        private void LoadSetting()
+        {
+            string ServerPath = form1.textBox_ServerPath.Text;
+            StreamReader file = new StreamReader(ServerPath + 
+                "\\" + form1.ServerForSetting + "\\cluster.ini");
+            string setting;
+            while (file.Peek() >= 0)
+            {
+                //setting = file.R
+                
+                switch (setting)
+                {
+                    
+                }
+            }
+            
+        }
+                
     }
 }

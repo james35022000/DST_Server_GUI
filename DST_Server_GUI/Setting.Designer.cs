@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl_Mod = new System.Windows.Forms.TabControl();
+            this.tabPage_Server = new System.Windows.Forms.TabPage();
             this.button_Save = new System.Windows.Forms.Button();
             this.comboBox_PauseWhenEmpty = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,55 +50,57 @@
             this.textBox_MasterPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ServerDscpt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_ServerName = new System.Windows.Forms.Label();
             this.textBox_ServerName = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPage_Map = new System.Windows.Forms.TabPage();
+            this.tabPage_Mod = new System.Windows.Forms.TabPage();
+            this.tabControl_Mod.SuspendLayout();
+            this.tabPage_Server.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl_Mod
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(468, 481);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl_Mod.Controls.Add(this.tabPage_Server);
+            this.tabControl_Mod.Controls.Add(this.tabPage_Map);
+            this.tabControl_Mod.Controls.Add(this.tabPage_Mod);
+            this.tabControl_Mod.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_Mod.Location = new System.Drawing.Point(12, 12);
+            this.tabControl_Mod.Name = "tabControl_Mod";
+            this.tabControl_Mod.SelectedIndex = 0;
+            this.tabControl_Mod.Size = new System.Drawing.Size(468, 481);
+            this.tabControl_Mod.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPage_Server
             // 
-            this.tabPage1.Controls.Add(this.button_Save);
-            this.tabPage1.Controls.Add(this.comboBox_PauseWhenEmpty);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.comboBox_Intention);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.comboBox_GameMode);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.comboBox_PVP);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBox_MaxPlayer);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox_ServerPwd);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox_CavesPort);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox_MasterPort);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox_ServerDscpt);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox_ServerName);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(460, 454);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Server";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage_Server.Controls.Add(this.button_Save);
+            this.tabPage_Server.Controls.Add(this.comboBox_PauseWhenEmpty);
+            this.tabPage_Server.Controls.Add(this.label11);
+            this.tabPage_Server.Controls.Add(this.comboBox_Intention);
+            this.tabPage_Server.Controls.Add(this.label10);
+            this.tabPage_Server.Controls.Add(this.label9);
+            this.tabPage_Server.Controls.Add(this.comboBox_GameMode);
+            this.tabPage_Server.Controls.Add(this.label8);
+            this.tabPage_Server.Controls.Add(this.comboBox_PVP);
+            this.tabPage_Server.Controls.Add(this.label7);
+            this.tabPage_Server.Controls.Add(this.textBox_MaxPlayer);
+            this.tabPage_Server.Controls.Add(this.label6);
+            this.tabPage_Server.Controls.Add(this.label5);
+            this.tabPage_Server.Controls.Add(this.textBox_ServerPwd);
+            this.tabPage_Server.Controls.Add(this.label4);
+            this.tabPage_Server.Controls.Add(this.textBox_CavesPort);
+            this.tabPage_Server.Controls.Add(this.label3);
+            this.tabPage_Server.Controls.Add(this.textBox_MasterPort);
+            this.tabPage_Server.Controls.Add(this.label2);
+            this.tabPage_Server.Controls.Add(this.textBox_ServerDscpt);
+            this.tabPage_Server.Controls.Add(this.label_ServerName);
+            this.tabPage_Server.Controls.Add(this.textBox_ServerName);
+            this.tabPage_Server.Location = new System.Drawing.Point(4, 23);
+            this.tabPage_Server.Name = "tabPage_Server";
+            this.tabPage_Server.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Server.Size = new System.Drawing.Size(460, 454);
+            this.tabPage_Server.TabIndex = 0;
+            this.tabPage_Server.Text = "Server";
+            this.tabPage_Server.UseVisualStyleBackColor = true;
             // 
             // button_Save
             // 
@@ -297,14 +299,16 @@
             this.textBox_ServerDscpt.TabIndex = 3;
             this.textBox_ServerDscpt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // label_ServerName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 14);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Server Name";
+            this.label_ServerName.AutoSize = true;
+            this.label_ServerName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_ServerName.Location = new System.Drawing.Point(32, 23);
+            this.label_ServerName.Name = "label_ServerName";
+            this.label_ServerName.Size = new System.Drawing.Size(84, 14);
+            this.label_ServerName.TabIndex = 2;
+            this.label_ServerName.Text = "Server Name";
+            this.label_ServerName.Click += new System.EventHandler(this.label_ServerName_Click);
             // 
             // textBox_ServerName
             // 
@@ -315,22 +319,32 @@
             this.textBox_ServerName.TabIndex = 1;
             this.textBox_ServerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tabPage2
+            // tabPage_Map
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(460, 454);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Map";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage_Map.Location = new System.Drawing.Point(4, 23);
+            this.tabPage_Map.Name = "tabPage_Map";
+            this.tabPage_Map.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Map.Size = new System.Drawing.Size(460, 454);
+            this.tabPage_Map.TabIndex = 1;
+            this.tabPage_Map.Text = "Map";
+            this.tabPage_Map.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_Mod
+            // 
+            this.tabPage_Mod.Location = new System.Drawing.Point(4, 23);
+            this.tabPage_Mod.Name = "tabPage_Mod";
+            this.tabPage_Mod.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Mod.Size = new System.Drawing.Size(460, 454);
+            this.tabPage_Mod.TabIndex = 2;
+            this.tabPage_Mod.Text = "Mod";
+            this.tabPage_Mod.UseVisualStyleBackColor = true;
             // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 505);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl_Mod);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -338,19 +352,19 @@
             this.ShowInTaskbar = false;
             this.Text = "Setting";
             this.Load += new System.EventHandler(this.Setting_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControl_Mod.ResumeLayout(false);
+            this.tabPage_Server.ResumeLayout(false);
+            this.tabPage_Server.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl_Mod;
+        private System.Windows.Forms.TabPage tabPage_Server;
+        private System.Windows.Forms.TabPage tabPage_Map;
+        private System.Windows.Forms.Label label_ServerName;
         private System.Windows.Forms.TextBox textBox_ServerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_ServerPwd;
@@ -372,6 +386,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox_GameMode;
         private System.Windows.Forms.Button button_Save;
+        private System.Windows.Forms.TabPage tabPage_Mod;
 
     }
 }

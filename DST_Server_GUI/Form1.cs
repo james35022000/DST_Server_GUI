@@ -15,6 +15,7 @@ namespace DST_Server_GUI
     {
         public StreamWriter MasterStreamWriter, CavesStreamWriter;
         public StringBuilder Master_output = new StringBuilder(""), Caves_output = new StringBuilder("");
+        public String ServerForSetting = "";
         private CLI cli = null;
         private Setting setting = null;
         private FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
@@ -199,6 +200,8 @@ namespace DST_Server_GUI
         {
             if (setting == null)
             {
+                if(comboBox_server.SelectedIndex != -1)
+                    ServerForSetting = comboBox_server.SelectedItem.ToString();
                 setting = new Setting(this);
                 setting.FormClosed += Setting_Form_Closed;
                 setting.Show();
@@ -213,6 +216,7 @@ namespace DST_Server_GUI
         private void Setting_Form_Closed(object sender, FormClosedEventArgs e)
         {
             setting = null;
+            ServerForSetting = "";
         }
 
         private void Form1_Closing(object sender, FormClosingEventArgs e)

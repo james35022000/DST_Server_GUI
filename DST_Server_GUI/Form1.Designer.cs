@@ -212,7 +212,6 @@
         private System.Windows.Forms.ComboBox comboBox_server;
         private System.Windows.Forms.Button button_CLI;
         private System.Windows.Forms.Button button_About;
-        private System.Windows.Forms.TextBox textBox_ServerPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Path;
         private System.Windows.Forms.Button button_Setting;
@@ -222,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dedicateServerPathToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        public System.Windows.Forms.TextBox textBox_ServerPath;
     }
 }
 
