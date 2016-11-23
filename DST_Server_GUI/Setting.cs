@@ -55,17 +55,32 @@ namespace DST_Server_GUI
             string ServerPath = form1.textBox_ServerPath.Text;
             StreamReader file = new StreamReader(ServerPath + 
                 "\\" + form1.ServerForSetting + "\\cluster.ini");
-            string setting;
+            string cmd, data;
             while (file.Peek() >= 0)
             {
-                //setting = file.R
+                cmd = file.ReadLine();
                 
-                switch (setting)
+                switch (cmd)
                 {
-                    
+                    case "game_mode" :
+                        break;
+                    default:
+                        break;
                 }
             }
             
+        }
+
+        private string splitCmd(ref string cmd)
+        {
+            string data = "";
+            bool data_flag = false;
+            int data_index_first = 0, data_index_last = 0;
+            for (data_index_first = 0; data_index_first < cmd.Length; data_index_first++)
+            {
+                
+            }
+            return data;
         }
                 
     }
