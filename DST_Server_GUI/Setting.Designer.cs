@@ -170,12 +170,12 @@
             this.comboBox_GameMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_GameMode.FormattingEnabled = true;
             this.comboBox_GameMode.Items.AddRange(new object[] {
-            "endless",
-            "survival",
-            "wilderness"});
+            "Endless",
+            "Survival",
+            "Wilderness"});
             this.comboBox_GameMode.Location = new System.Drawing.Point(193, 273);
             this.comboBox_GameMode.Name = "comboBox_GameMode";
-            this.comboBox_GameMode.Size = new System.Drawing.Size(85, 22);
+            this.comboBox_GameMode.Size = new System.Drawing.Size(121, 22);
             this.comboBox_GameMode.TabIndex = 17;
             // 
             // label8
