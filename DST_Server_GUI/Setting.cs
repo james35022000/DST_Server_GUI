@@ -95,16 +95,13 @@ namespace DST_Server_GUI
                             textBox_ServerName.Text = data;
                         else
                         {
-                            DialogResult key = MessageBox.Show("Setting name ", "Warning",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (key == DialogResult.Yes)
-                            {
-                                string AppPath = Application.StartupPath + "\\data";
-                                StreamWriter file = new StreamWriter(AppPath);
-                                file.WriteLine(textBox_ServerPath.Text.ToString());
-                                file.Close();
-                            }
-                            e.Cancel = (key == DialogResult.No);
+                            DialogResult key = MessageBox.Show("Setting name is different, which name do you want to choose?" + Environment.NewLine
+                                + Environment.NewLine + "OK:\t" + form1.ServerForSetting + Environment.NewLine + "Cancel:\t" + data, 
+                                "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (key == DialogResult.OK)
+                                textBox_ServerName.Text = form1.ServerForSetting;
+                            else
+                                textBox_ServerName.Text = data;
                         }
                         break;
                     default:
@@ -148,6 +145,11 @@ namespace DST_Server_GUI
                 data = cmd.Substring(data_index_first, data_index_last - data_index_first);
             cmd = cmd.Substring(cmd_index_first, cmd_index_last - cmd_index_first);
             return data;
+        }
+
+        private bool nameEqual(string name)
+        {
+            return false;
         }
                 
     }
