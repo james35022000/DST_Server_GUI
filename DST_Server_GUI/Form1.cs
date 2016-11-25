@@ -31,31 +31,15 @@ namespace DST_Server_GUI
         {
             this.FormClosing += new FormClosingEventHandler(Form1_Closing);
             string AppPath = Application.StartupPath + "\\data";
-            try
+            if (File.Exists(@AppPath))
             {
                 string[] data = File.ReadAllLines(AppPath);
                 if (data.Length != 0)
-                {
-                    if (File.Exists(@data[0] + "\\serverInfo"))
-                    {
+                    if (LoadServerConfig(data[0]))
                         textBox_ServerPath.Text = data[0];
-                        string[] ServerInfo = File.ReadAllLines(@data[0] + "\\serverInfo");
-                        if (ServerInfo.Length != 0)
-                        {
-                            int num = Convert.ToInt32(ServerInfo[0].Split(',')[1]);
-                            for (int i = 1; i <= num; i++)
-                                comboBox_server.Items.Add(ServerInfo[i]);
-                        }
-                        else
-                        {
-                            StreamWriter file = new StreamWriter(@data[0] + "\\serverInfo");
-                            file.WriteLine("Server_num,0");
-                            file.Close();
-                        }
-                    }
-                }
             }
-            catch (FileNotFoundException ex) { File.Create(AppPath); }
+            else
+                File.Create(AppPath);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -194,6 +178,7 @@ namespace DST_Server_GUI
         {
             folderBrowserDialog.ShowDialog();
             textBox_ServerPath.Text = folderBrowserDialog.SelectedPath;
+            LoadServerConfig(textBox_ServerPath.Text);
         }
 
         private void button_Setting_Click(object sender, EventArgs e)
@@ -246,6 +231,30 @@ namespace DST_Server_GUI
         private bool SettingAvailable()
         {
             return true;
+        }
+
+        private bool LoadServerConfig(string path)
+        {
+            comboBox_server.Items.Clear();
+            if (File.Exists(@path + "\\ServerConfig"))
+            {
+                string[] ServerInfo = File.ReadAllLines(@path + "\\ServerConfig");
+                if (ServerInfo.Length != 0)
+                {
+                    int num = Convert.ToInt32(ServerInfo[0].Split(',')[1]);
+                    for (int i = 1; i <= num; i++)
+                        comboBox_server.Items.Add(ServerInfo[i]);
+                }
+                else
+                {
+                    StreamWriter file = new StreamWriter(@path + "\\ServerConfig");
+                    file.WriteLine("Server_num,0");
+                    file.Close();
+                }
+                return true;
+            }
+            else
+                return false;
         }
 
     }

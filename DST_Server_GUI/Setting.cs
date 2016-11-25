@@ -29,10 +29,19 @@ namespace DST_Server_GUI
         {
             if (form1.ServerForSetting != "")
             {
-                this.Text += "---" + form1.ServerForSetting;
-                textBox_ServerName.Text = form1.ServerForSetting;
-                textBox_ServerName.ReadOnly = true;
-                LoadSetting();
+                if (!Directory.Exists(@form1.textBox_ServerPath.Text + "\\" +
+                        form1.ServerForSetting))
+                {
+                    MessageBox.Show("Directory not found! Create new Server", "Error");
+                    this.Text += "---New Server";
+                }
+                else
+                {
+                    this.Text += "---" + form1.ServerForSetting;
+                    textBox_ServerName.Text = form1.ServerForSetting;
+                    textBox_ServerName.ReadOnly = true;
+                    LoadSetting();
+                }
             }
             else
             {
@@ -53,6 +62,7 @@ namespace DST_Server_GUI
         private void LoadSetting()
         {
             string ServerPath = form1.textBox_ServerPath.Text;
+            /*-----------------------cluster setting---------------------------*/
             StreamReader file = new StreamReader(ServerPath + 
                 "\\" + form1.ServerForSetting + "\\cluster.ini");
             string cmd, data;
@@ -91,25 +101,64 @@ namespace DST_Server_GUI
                         break;
                     case "cluster_name":
                         if (data == "") break;
-                        if (nameEqual(data))
-                            textBox_ServerName.Text = data;
-                        else
-                        {
-                            DialogResult key = MessageBox.Show("Setting name is different, which name do you want to choose?" + Environment.NewLine
-                                + Environment.NewLine + "OK:\t" + form1.ServerForSetting + Environment.NewLine + "Cancel:\t" + data, 
-                                "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (key == DialogResult.OK)
-                                textBox_ServerName.Text = form1.ServerForSetting;
-                            else
-                                textBox_ServerName.Text = data;
-                        }
+                        textBox_ServerName.Text = data;
+                        break;
+                    case "cluster_intention":
+                        if (data == "cooperative")
+                            comboBox_Intention.SelectedIndex = 0;
+                        else if (data == "social")
+                            comboBox_Intention.SelectedIndex = 1;
+                        else if (data == "competitive")
+                            comboBox_Intention.SelectedIndex = 2;
+                        else if (data == "madness")
+                            comboBox_Intention.SelectedIndex = 3;
+                        break;
+                    case "cluster_password":
+                        textBox_ServerPwd.Text = data;
                         break;
                     default:
                         break;
                 }
             }
             file.Close();
-            
+            /*-----------------------Master setting---------------------------*/
+            if (Directory.Exists(@ServerPath + "\\" + form1.ServerForSetting +
+                "\\Master"))
+            {
+                file = new StreamReader(ServerPath +
+                    "\\" + form1.ServerForSetting + "\\Master\\server.ini");
+                while (file.Peek() >= 0)
+                {
+                    cmd = file.ReadLine();
+                    data = splitCmd(ref cmd);
+                    switch (cmd)
+                    {
+                        case "server_port":
+                            textBox_MasterPort.Text = data;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                file.Close();
+            }
+            /*------------------------Caves setting---------------------------*/
+            if (!Directory.Exists(@ServerPath + "\\" + form1.ServerForSetting +
+                "\\Caves"))
+                return;
+            file = new StreamReader(ServerPath +
+                    "\\" + form1.ServerForSetting + "\\Caves\\server.ini");
+            cmd = file.ReadLine();
+            data = splitCmd(ref cmd);
+            switch (cmd)
+            {
+                case "server_port":
+                    textBox_CavesPort.Text = data;
+                    break;
+                default:
+                    break;
+            }
+            file.Close();
         }
 
         private string splitCmd(ref string cmd)
